@@ -8,7 +8,7 @@ test_down = Downloader()
 test_down.get_info('https://manganelo.com/manga/huku267071576897767')
 
 
-print(test_down.info(True,True))
+print(test_down.chapter_list['chapter_109.1'])
 
 
 
