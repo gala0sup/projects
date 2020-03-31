@@ -60,9 +60,32 @@ class Downloader(object):
                     'chapters' : str(self.chapter_list.keys()),
                     'last': str(self.last_chapter)
                     }
+                else:
+                    return {
+                        'name': str(self.name),
+                        'chapters':str(self.chapter_list.keys())
+                    }
+            else:
+                if last:
+                    return { 
+                    'name':str(self.name),
+                    'last': str(self.last_chapter)
+                    }
+                else:
+                    return str(self.name)
+        else:
+            if chapters:
+                if last:
+                    return { 
+                    'chapters' : str(self.chapter_list.keys()),
+                    'last': str(self.last_chapter)
+                    }
+                else:
+                    return  str(self.chapter_list.keys())
+            else:
+                if last:
+                    return str(self.last_chapter)
+                else:
+                    raise ValueError('atleast one of the three argument must be True','name','chapters','last')
         
 
-a = Downloader()
-a.get_info('https://manganelo.com/manga/huku267071576897767')
-info = a.info(name=True)
-print(info)

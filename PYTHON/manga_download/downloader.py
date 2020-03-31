@@ -1,18 +1,14 @@
 import pathlib
 import shutil
 
-import requests as rq
-from bs4 import BeautifulSoup as bs
-
 from scripts.downloader_class import Downloader
 
 test_down = Downloader()
 
 test_down.get_info('https://manganelo.com/manga/huku267071576897767')
 
-info = test_down.info(True,True)
 
-print(info)
+print(test_down.info(True,True))
 
 
 
