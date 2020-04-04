@@ -15,7 +15,7 @@ class Downloader(object):
 
 
         self.manga_link = manga_link
-        self.page = None
+        self.page = 'a'
         self.prased_html = None
         self.name = None
         self.chapter_list = {}
@@ -170,6 +170,7 @@ class Downloader(object):
     def set_download_dir(self, directory):
 
         self.download_dir = pathlib.Path(directory)
+    
     def _slugify(self,value):
         """
         Normalizes string, converts to lowercase, removes non-alpha characters,
